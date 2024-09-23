@@ -1,0 +1,45 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+}
+
+.monkeyimg {
+    width: 330px;
+    padding-top: 8px;
+}
+
+.image {
+    border-radius: 40px;
+    border-bottom-right-radius: 100px;
+    position: relative;
+}
+
+.play-icon {
+    position: absolute;
+    top: 372px;
+    right: 11px;
+    width: 77px;
+    border-radius: 50px;
+}
+
+.title {
+    padding: 55px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+}
+
+.btn-sign-up:hover,
+.btn-login {
+    background-color: black;
+    color: white;
+}

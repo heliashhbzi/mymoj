@@ -1,0 +1,80 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+.navbar{
+    display: flex;
+    padding-top: 30px;
+    padding-right: 135px;
+    padding-left: 30px;
+}
+.profile-img{
+    width: 80px;
+    height: 80px;
+    border-radius: 50px;
+}
+.profile-setting{
+    display: flex;
+   padding-top: 50px;
+   padding-left: 40px;
+}
+.profile-name{
+    padding-top: 10px;
+    padding-left: 15px;
+}
+.container-box{
+    padding: 36px;
+}
+.profile-box{
+    color: white;
+    padding: 27px;
+    display: flex;
+    height: 200px;
+    background:linear-gradient(to right,black , rgb(243 59 0));
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    border-radius: 45px
+}
+.crown-icon{
+    width: 70px;
+    height:70px;
+    border-radius: 50px;
+}
+.profile-text{
+    padding-left: 10px;
+}
+.ul-container{
+    padding: 30px;
+}
+.ul{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+.list{
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    font-size: 20px;
+    font-weight: 500;
+    align-items: baseline;
+    padding-top: 30px;
+
+}
+.firstlist{
+    padding-top: 0;
+}
+.list::after{
+    content: '';
+    width: 100%;
+    height: 1px;
+    background-color: #0000002b;
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+}
+.tag-a{
+    text-decoration: none;
+    color: black;
+}

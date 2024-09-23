@@ -1,0 +1,74 @@
+<p style="display:none;">Current Track: {{ audioService.getCurrentTrack() }}</p>
+
+<div>
+    <div class="navbar">
+        <a routerLink="/collectionlist">
+            <img src="/assets/back.png" alt="">
+        </a>
+        <h3 style="font-weight: bold;">Now Play</h3>
+
+        <div class="dropdown">
+            <i class="fa fa-ellipsis-v text-dark" (click)="toggleDropDown()"></i>
+            <ul *ngIf="isOpenDropDown" class="custom-dropdown">
+                <a style="color: black; text-decoration: none;" routerLink="/authorsearch">
+                    <li><a class="dropdown-item" href="#"> <i class="fa fa-user pe-2"></i>Author Search</a></li>
+                </a>
+                <li><a class="dropdown-item" href="#"> <i class="fa fa-cog pe-2"></i>Settings</a></li>
+                <li><a class="dropdown-item" href="#"> <i class="fa fa-arrow-left pe-2"></i>Logout</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+<div class="player">
+    <div class="wrapper">
+        <div class="details">
+            <div class="track-img">
+                <img [src]="musicList[audioService.getCurrentTrackIndex()].img" width="100%"
+                    style="border-radius: 30px;" />
+            </div>
+            <div class="track-name">{{musicList[audioService.getCurrentTrackIndex()].name}}</div>
+            <div class="track-artist">{{musicList[audioService.getCurrentTrackIndex()].artist}}</div>
+        </div>
+
+        <div class="slider-container">
+            <i class="fa fa-volume-down"></i>
+            <input type="range" min="1" max="100" value="100" class="volume-slider" (input)="onVolumeChange($event)">
+            <i class="fa fa-volume-up"></i>
+        </div>
+
+        <div class="slider-container">
+            <div class="current-time">{{ formatTime(audioService.getCurrentTime()) }}</div>
+            <input type="range" min="0" [max]="audioService.getDuration()" [value]="audioService.getCurrentTime()"
+                class="seek-slider" (input)="onSeekChange($event)">
+            <div class="total-duration">{{ formatTime(audioService.getDuration()) }}</div>
+        </div>
+
+        <div class="buttons">
+            <div class="random-track" (click)="randomTrack()">
+                <i class="fa fa-random fa-2x" aria-hidden="true" title="random"></i>
+            </div>
+            <div class="prev-track" (click)="prevTrack()">
+                <i class="fa fa-step-backward fa-2x"></i>
+            </div>
+            <div class="playpause-track" (click)="playPauseTrack()">
+                <i class="fa fa-play-circle fa-5x"></i>
+            </div>
+            <div class="next-track" (click)="nextTrack()">
+                <i class="fa fa-step-forward fa-2x"></i>
+            </div>
+            <div class="repeat-track" (click)="resetCurrentTime()">
+                <i class="fa fa-repeat fa-2x" title="repeat"></i>
+            </div>
+        </div>
+
+        <div id="wave">
+            <span class="stroke"></span>
+            <span class="stroke"></span>
+            <span class="stroke"></span>
+            <span class="stroke"></span>
+            <span class="stroke"></span>
+            <span class="stroke"></span>
+            <span class="stroke"></span>
+        </div>
+    </div>
+</div>

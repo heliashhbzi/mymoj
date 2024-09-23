@@ -1,0 +1,23 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+.navbar{
+    display: flex;
+    padding-top: 30px;
+    padding-right: 135px;
+    padding-left: 30px;
+}
+.search-container{
+    position: relative;
+}
+.search-button{
+    position: absolute;
+    top: 22px;
+    left: 20px;
+}
+.music-list{
+    display: flex;
+    flex-direction: column;
+
+}
